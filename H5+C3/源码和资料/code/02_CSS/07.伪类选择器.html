@@ -32,6 +32,12 @@
 
             - :not() 否定伪类
                 - 将符合条件的元素从选择器中去除
+            - :only-child
+                - 例：指定标签x:only-child
+                - 选择一个指定的标签x 并且这个标签没有任何兄弟标签
+            - :only-of-type
+                - 例：指定标签x:only-child
+                - 选择一个指定的标签x并且这个标签的兄弟标签没有x标签
  */
         /* ul > li:first-child{
             color: red;
@@ -56,10 +62,27 @@
         ul > li:not(:nth-of-type(3)){
             color: yellowgreen;
         }
+        #testdiv p:only-of-type{
+            color: red;
+        }
     </style>
 </head>
 <body>
-    
+    <div id="testdiv">
+        <div>
+            <p>ppp1</p>
+            <div>ddd1</div>
+        </div>
+        <div>
+            <p>ppp2</p>
+            <p>ppp2</p>
+        </div>
+        <div>
+            <p>ppp3</p>
+        </div>
+    </div>
+
+    <hr>
     <ul>
         <span>我是一个span</span>
         <li>第〇个</li>
